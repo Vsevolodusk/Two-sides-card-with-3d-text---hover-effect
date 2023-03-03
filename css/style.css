@@ -1,0 +1,53 @@
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+.wrapper {
+  height: 500px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+.card {
+  backface-visibility: hidden;
+  font-size: 5rem;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: grid;
+  text-transform: uppercase;
+  place-content: center;
+  transition: 1.1s transform linear;
+  transform-style: preserve-3d;
+  border: 2px solid #9b9b9b;
+  border-width: 1px 3px 4px;
+  border-radius: 20px;
+  box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.1);
+}
+.front {
+  height: 100%;
+  width: 100%;
+  background: #cdd6c2;
+  color: #333333;
+  position: absolute;
+}
+.back {
+  height: 100%;
+  width: 100%;
+  background: #afbe9d;
+  color: #5d6b4b;
+  position: absolute;
+  transform: rotateY(180deg) perspective(500px);
+}
+.wrapper:hover .front {
+  transform: rotateY(180deg) perspective(500px);
+}
+.wrapper:hover .back {
+  transform: rotateY(360deg) perspective(500px);
+}
+.card p {
+  transform: perspective(500px) translateZ(50px);
+  text-shadow: 2px 1px 2px #000, 5px 2px 3px #000, 6px 3px 5px #000;
+}
